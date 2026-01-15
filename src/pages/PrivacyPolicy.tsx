@@ -95,6 +95,10 @@ export default function PrivacyPolicy() {
                 <Icon name="Phone" size={18} className="text-primary" />
                 <a href="tel:+79060194020" className="text-primary hover:underline">+7 906 019-40-20</a>
               </p>
+              <p className="text-foreground/80 flex items-center gap-2 mt-2">
+                <Icon name="Mail" size={18} className="text-primary" />
+                <a href="mailto:advokatmushovets@mail.ru" className="text-primary hover:underline">advokatmushovets@mail.ru</a>
+              </p>
             </div>
           </section>
 

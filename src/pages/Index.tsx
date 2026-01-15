@@ -91,8 +91,17 @@ export default function Index() {
 
       <section className="py-12 md:py-20 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid lg:grid-cols-5 gap-8 items-center">
-            <div className="lg:col-span-3 text-left">
+          <div className="flex flex-col lg:flex-row gap-8 items-center">
+            <div className="lg:w-1/3 flex justify-center lg:justify-start">
+              <div className="relative w-full max-w-xs">
+                <img 
+                  src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
+                  alt="Мушовец Алексей Геннадьевич" 
+                  className="rounded-lg shadow-2xl w-full h-auto"
+                />
+              </div>
+            </div>
+            <div className="lg:w-2/3 text-left">
               <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 Профессиональная<br />защита ваших прав
               </h2>
@@ -107,15 +116,6 @@ export default function Index() {
                 >
                   +7 906 019-40-20
                 </a>
-              </div>
-            </div>
-            <div className="lg:col-span-2 flex justify-center lg:justify-start lg:ml-8">
-              <div className="relative w-full max-w-sm">
-                <img 
-                  src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
-                  alt="Мушовец Алексей Геннадьевич" 
-                  className="rounded-lg shadow-2xl w-full h-auto"
-                />
               </div>
             </div>
           </div>
@@ -283,6 +283,16 @@ export default function Index() {
                     <p className="mt-6 font-semibold text-primary">
                       Найдем оптимальный путь разрешения даже самых сложных жизненных ситуаций
                     </p>
+                    <div className="mt-6 pt-6 border-t border-border space-y-3">
+                      <p className="flex items-center gap-2">
+                        <Icon name="Phone" size={20} className="text-primary flex-shrink-0" />
+                        <a href="tel:+79060194020" className="hover:text-primary transition-colors">+7 906 019-40-20</a>
+                      </p>
+                      <p className="flex items-center gap-2">
+                        <Icon name="Mail" size={20} className="text-primary flex-shrink-0" />
+                        <a href="mailto:advokatmushovets@mail.ru" className="hover:text-primary transition-colors">advokatmushovets@mail.ru</a>
+                      </p>
+                    </div>
                   </div>
                 </div>
               </div>
