@@ -89,33 +89,64 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="py-12 md:py-20 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="flex flex-col lg:flex-row gap-8 items-center">
-            <div className="lg:w-1/3 flex justify-center lg:justify-start">
-              <div className="relative w-full max-w-xs">
+          <div className="grid lg:grid-cols-2 gap-12 items-center max-w-6xl mx-auto">
+            <div className="space-y-6">
+              <div>
+                <h2 className="text-4xl md:text-5xl lg:text-6xl font-bold mb-4 leading-tight">
+                  Профессиональная<br />защита ваших прав
+                </h2>
+                <p className="text-xl md:text-2xl text-foreground/80 font-medium">
+                  Более 20 лет практики
+                </p>
+              </div>
+              
+              <div className="space-y-4 pt-4">
+                <div className="flex items-center gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-5 py-4 rounded-xl hover:border-primary/40 transition-colors">
+                  <Icon name="Phone" size={24} className="text-primary flex-shrink-0" />
+                  <div className="flex flex-col">
+                    <span className="text-sm text-muted-foreground">Телефон</span>
+                    <a 
+                      href="tel:+79060194020" 
+                      className="text-lg md:text-xl font-bold text-foreground hover:text-primary transition-colors"
+                    >
+                      +7 906 019-40-20
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-5 py-4 rounded-xl hover:border-primary/40 transition-colors">
+                  <Icon name="Mail" size={24} className="text-primary flex-shrink-0" />
+                  <div className="flex flex-col">
+                    <span className="text-sm text-muted-foreground">Email</span>
+                    <a 
+                      href="mailto:advokatmushovets@mail.ru" 
+                      className="text-lg md:text-xl font-bold text-foreground hover:text-primary transition-colors break-all"
+                    >
+                      advokatmushovets@mail.ru
+                    </a>
+                  </div>
+                </div>
+
+                <div className="flex items-center gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-5 py-4 rounded-xl">
+                  <Icon name="Award" size={24} className="text-primary flex-shrink-0" />
+                  <div className="flex flex-col">
+                    <span className="text-sm text-muted-foreground">Регистрационный номер</span>
+                    <span className="text-lg md:text-xl font-bold text-foreground">77/14943</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div className="flex justify-center lg:justify-end order-first lg:order-last">
+              <div className="relative w-full max-w-md">
+                <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl"></div>
                 <img 
                   src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
                   alt="Мушовец Алексей Геннадьевич" 
-                  className="rounded-lg shadow-2xl w-full h-auto"
+                  className="relative rounded-2xl shadow-2xl w-full h-auto border-4 border-primary/30"
                 />
-              </div>
-            </div>
-            <div className="lg:w-2/3 text-left">
-              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
-                Профессиональная<br />защита ваших прав
-              </h2>
-              <p className="text-lg md:text-xl mb-6 opacity-90">
-                Более 20 лет практики
-              </p>
-              <div className="inline-flex items-center gap-3 bg-card/50 backdrop-blur-sm border border-primary/30 px-6 py-4 rounded-lg">
-                <p className="text-xl md:text-2xl font-bold text-primary whitespace-nowrap">ТЕЛЕФОН:</p>
-                <a 
-                  href="tel:+79060194020" 
-                  className="text-xl md:text-2xl font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
-                >
-                  +7 906 019-40-20
-                </a>
               </div>
             </div>
           </div>
