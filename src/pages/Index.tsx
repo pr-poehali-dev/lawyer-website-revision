@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Button } from '@/components/ui/button';
 import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
@@ -14,6 +14,28 @@ export default function Index() {
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
+
+  useEffect(() => {
+    const handleKeyDown = (e: KeyboardEvent) => {
+      if (
+        e.key === 'F12' ||
+        (e.ctrlKey && e.shiftKey && (e.key === 'I' || e.key === 'J' || e.key === 'C')) ||
+        (e.ctrlKey && e.key === 'U') ||
+        (e.metaKey && e.altKey && (e.key === 'I' || e.key === 'J' || e.key === 'C'))
+      ) {
+        e.preventDefault();
+        return false;
+      }
+    };
+
+    document.addEventListener('keydown', handleKeyDown);
+    document.addEventListener('contextmenu', (e) => e.preventDefault());
+
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown);
+      document.removeEventListener('contextmenu', (e) => e.preventDefault());
+    };
+  }, []);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -58,8 +80,11 @@ export default function Index() {
               <div className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground whitespace-nowrap">
                 Адвокатский кабинет
               </div>
-              <p className="text-[11px] sm:text-xs md:text-sm lg:text-base text-foreground/80 font-semibold mt-0.5 truncate">
-                Адвоката Мушовец А. Г.
+              <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-foreground font-bold mt-0.5">
+                Адвоката Мушовец Алексея Геннадьевича
+              </p>
+              <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-foreground font-bold mt-0.5">
+                города Москвы
               </p>
               <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mt-0.5 truncate">
                 Регистрационный номер в реестре 77/14943
