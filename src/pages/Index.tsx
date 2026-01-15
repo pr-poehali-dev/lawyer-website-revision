@@ -47,16 +47,16 @@ export default function Index() {
   return (
     <div className="min-h-screen bg-background">
       <header className="bg-secondary border-b border-border sticky top-0 z-50">
-        <div className="container mx-auto px-4 sm:px-6 py-3 sm:py-4">
-          <div className="flex items-center justify-between">
-            <div className="flex flex-col">
-              <div className="text-base sm:text-lg md:text-xl font-bold text-foreground">
-                Кабинетский Адвокат
+        <div className="container mx-auto px-3 sm:px-4 md:px-6 py-2.5 sm:py-3 md:py-4">
+          <div className="flex items-center justify-between gap-2">
+            <div className="flex flex-col min-w-0 flex-1">
+              <div className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground whitespace-nowrap">
+                Адвокатский кабинет
               </div>
-              <p className="text-xs sm:text-sm md:text-base text-foreground/80 font-semibold mt-0.5">
+              <p className="text-[11px] sm:text-xs md:text-sm lg:text-base text-foreground/80 font-semibold mt-0.5 truncate">
                 Адвоката Мушовец А. Г.
               </p>
-              <p className="text-[10px] sm:text-xs text-muted-foreground mt-0.5">
+              <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mt-0.5 truncate">
                 Регистрационный номер в реестре 77/14943
               </p>
             </div>
@@ -82,70 +82,70 @@ export default function Index() {
               </button>
             </nav>
 
-            <button className="md:hidden" aria-label="Меню">
-              <Icon name="Menu" size={20} className="text-primary sm:w-6 sm:h-6" />
+            <button className="md:hidden flex-shrink-0" aria-label="Меню">
+              <Icon name="Menu" size={20} className="text-primary" />
             </button>
           </div>
         </div>
       </header>
 
-      <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
-        <div className="container mx-auto px-4 sm:px-6">
-          <div className="grid lg:grid-cols-2 gap-8 sm:gap-10 md:gap-12 items-center max-w-6xl mx-auto">
-            <div className="space-y-4 sm:space-y-6">
+      <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
+        <div className="container mx-auto px-3 sm:px-4 md:px-6">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center max-w-6xl mx-auto">
+            <div className="space-y-3 sm:space-y-4 md:space-y-6">
               <div>
-                <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-3 sm:mb-4 leading-tight">
-                  Профессиональная<br />защита ваших прав
+                <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight">
+                  Профессиональная защита ваших прав
                 </h1>
-                <p className="text-lg sm:text-xl md:text-2xl text-foreground/80 font-medium">
+                <p className="text-base sm:text-lg md:text-xl lg:text-2xl text-foreground/80 font-medium">
                   Более 20 лет практики
                 </p>
               </div>
               
-              <div className="space-y-3 sm:space-y-4 pt-2 sm:pt-4">
-                <div className="flex items-center gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-4 sm:px-5 py-3 sm:py-4 rounded-xl hover:border-primary/40 transition-colors">
-                  <Icon name="Phone" size={20} className="text-primary flex-shrink-0 sm:w-6 sm:h-6" />
+              <div className="space-y-2.5 sm:space-y-3 md:space-y-4 pt-2 sm:pt-3 md:pt-4">
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 md:py-4 rounded-xl hover:border-primary/40 transition-colors">
+                  <Icon name="Phone" size={18} className="text-primary flex-shrink-0 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   <div className="flex flex-col min-w-0">
-                    <span className="text-xs sm:text-sm text-muted-foreground">Телефон</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">Телефон</span>
                     <a 
                       href="tel:+79060194020" 
-                      className="text-base sm:text-lg md:text-xl font-bold text-foreground hover:text-primary transition-colors"
+                      className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground hover:text-primary transition-colors"
                     >
                       +7 906 019-40-20
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-4 sm:px-5 py-3 sm:py-4 rounded-xl hover:border-primary/40 transition-colors">
-                  <Icon name="Mail" size={20} className="text-primary flex-shrink-0 sm:w-6 sm:h-6" />
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 md:py-4 rounded-xl hover:border-primary/40 transition-colors">
+                  <Icon name="Mail" size={18} className="text-primary flex-shrink-0 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   <div className="flex flex-col min-w-0 overflow-hidden">
-                    <span className="text-xs sm:text-sm text-muted-foreground">Email</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">Email</span>
                     <a 
                       href="mailto:advokatmushovets@mail.ru" 
-                      className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground hover:text-primary transition-colors break-all"
+                      className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-foreground hover:text-primary transition-colors break-all"
                     >
                       advokatmushovets@mail.ru
                     </a>
                   </div>
                 </div>
 
-                <div className="flex items-center gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-4 sm:px-5 py-3 sm:py-4 rounded-xl">
-                  <Icon name="Award" size={20} className="text-primary flex-shrink-0 sm:w-6 sm:h-6" />
+                <div className="flex items-center gap-2.5 sm:gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 md:py-4 rounded-xl">
+                  <Icon name="Award" size={18} className="text-primary flex-shrink-0 sm:w-5 sm:h-5 md:w-6 md:h-6" />
                   <div className="flex flex-col">
-                    <span className="text-xs sm:text-sm text-muted-foreground">Регистрационный номер</span>
-                    <span className="text-base sm:text-lg md:text-xl font-bold text-foreground">77/14943</span>
+                    <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">Регистрационный номер</span>
+                    <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground">77/14943</span>
                   </div>
                 </div>
               </div>
             </div>
 
             <div className="flex justify-center lg:justify-end order-first lg:order-last">
-              <div className="relative w-full max-w-xs sm:max-w-sm md:max-w-md">
+              <div className="relative w-full max-w-[280px] xs:max-w-xs sm:max-w-sm md:max-w-md">
                 <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl"></div>
                 <img 
                   src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
                   alt="Адвокат Мушовец Алексей Геннадьевич - более 20 лет практики" 
-                  className="relative rounded-2xl shadow-2xl w-full h-auto border-4 border-primary/30 select-none"
+                  className="relative rounded-xl sm:rounded-2xl shadow-2xl w-full h-auto border-2 sm:border-4 border-primary/30 select-none"
                   draggable="false"
                   onContextMenu={(e) => e.preventDefault()}
                 />
