@@ -12,10 +12,12 @@ export default function Index() {
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
     element?.scrollIntoView({ behavior: 'smooth' });
+    setIsMobileMenuOpen(false);
   };
 
   const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
@@ -82,10 +84,39 @@ export default function Index() {
               </button>
             </nav>
 
-            <button className="md:hidden flex-shrink-0" aria-label="Меню">
-              <Icon name="Menu" size={20} className="text-primary" />
+            <button 
+              className="md:hidden flex-shrink-0" 
+              aria-label="Меню"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+            >
+              <Icon name={isMobileMenuOpen ? "X" : "Menu"} size={20} className="text-primary" />
             </button>
           </div>
+          
+          {isMobileMenuOpen && (
+            <div className="md:hidden mt-4 pb-4 border-t border-border pt-4">
+              <nav className="flex flex-col gap-3">
+                <button
+                  onClick={() => scrollToSection('services')}
+                  className="text-foreground hover:text-primary transition-colors font-medium text-base text-left px-2 py-2 hover:bg-card/50 rounded-lg"
+                >
+                  Услуги
+                </button>
+                <button
+                  onClick={() => scrollToSection('about')}
+                  className="text-foreground hover:text-primary transition-colors font-medium text-base text-left px-2 py-2 hover:bg-card/50 rounded-lg"
+                >
+                  Обо мне
+                </button>
+                <button
+                  onClick={() => scrollToSection('contact')}
+                  className="text-foreground hover:text-primary transition-colors font-medium text-base text-left px-2 py-2 hover:bg-card/50 rounded-lg"
+                >
+                  Контакты
+                </button>
+              </nav>
+            </div>
+          )}
         </div>
       </header>
 
@@ -136,6 +167,15 @@ export default function Index() {
                     <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground">77/14943</span>
                   </div>
                 </div>
+
+                <Button 
+                  size="lg"
+                  className="w-full mt-2 sm:mt-3 md:mt-4 h-12 sm:h-14 text-base sm:text-lg font-bold shadow-lg hover:shadow-xl transition-all"
+                  onClick={() => window.location.href = 'tel:+79060194020'}
+                >
+                  <Icon name="Phone" size={20} className="mr-2" />
+                  Связаться со мной
+                </Button>
               </div>
             </div>
 
