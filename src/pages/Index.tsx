@@ -8,6 +8,7 @@ import Icon from '@/components/ui/icon';
 
 export default function Index() {
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [expandedService, setExpandedService] = useState<number | null>(null);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -108,7 +109,7 @@ export default function Index() {
             <div className="flex justify-center">
               <div className="relative">
                 <img 
-                  src="https://cdn.poehali.dev/files/image.png" 
+                  src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
                   alt="Мушовец Алексей Геннадьевич" 
                   className="rounded-lg shadow-2xl max-w-full h-auto"
                 />
@@ -123,18 +124,51 @@ export default function Index() {
           <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
             Юридические услуги
           </h2>
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+          <div className="grid md:grid-cols-2 gap-6">
             {[
               {
-                icon: 'Building2',
-                title: 'Арбитражные споры',
+                icon: 'Gavel',
+                title: 'Уголовные дела',
+                description: 'Представление интересов доверителей и защита по уголовным делам подозреваемых, обвиняемых, свидетелей',
                 items: [
-                  'Консультирование юридических лиц и индивидуальных предпринимателей по вопросам правоприменительной практики',
+                  'Консультирование по вопросам правоприменительной практики по уголовным делам, выработка правовой позиции',
+                  'Правовая помощь подозреваемым, обвиняемым, свидетелям на стадии дознания или предварительного расследования',
+                  'Защита доверителей при рассмотрении уголовных дел всех категорий в суде первой, апелляционной, кассационной инстанции',
+                  'Представление интересов потерпевших в уголовном деле на стадии предварительного расследования',
+                  'Предъявление гражданского иска в уголовном деле в интересах потерпевших',
+                  'Обжалование действий и бездействий должностных лиц в порядке статьи 124, 125 УПК РФ',
+                  'Сбор доказательств по уголовному делу',
+                  'Обжалование приговора в судах всех инстанций',
+                  'Представление интересов по вопросам связанным с исполнением приговора, отбывания наказания, УДО'
+                ]
+              },
+              {
+                icon: 'Scale',
+                title: 'Гражданские дела',
+                description: 'Представление интересов доверителей по гражданским, семейным, трудовым и наследственным делам',
+                items: [
+                  'Консультирование по вопросам правоприменительной практики по гражданскому делу',
+                  'Составление и подача исковых заявлений, ходатайств, заявлений в суд',
+                  'Представление интересов доверителей в судах общей юрисдикции всех уровней и инстанций',
+                  'Обжалование решений, определений по делу в суды вышестоящих инстанций',
+                  'Представление интересов на стадии исполнения решений суда',
+                  'Работа в службе судебных приставов, обжалование незаконных действий судебных приставов',
+                  'Представление интересов по делам применения семейного и трудового законодательства',
+                  'Имущественные споры, дела об установлении фактов, имеющих юридическое значение'
+                ]
+              },
+              {
+                icon: 'Building2',
+                title: 'Арбитражные дела',
+                description: 'Консультирование юридических лиц и ИП по вопросам правоприменительной практики',
+                items: [
+                  'Консультирование по спорам связанным с коммерческой и предпринимательской деятельностью',
                   'Составление и подача исковых заявлений, ходатайств в арбитражный суд',
-                  'Представление интересов в арбитражных судах всех уровней',
-                  'Защита интересов во всех государственных органах и учреждениях',
+                  'Представление интересов юридических лиц и ИП в арбитражных судах всех уровней',
+                  'Дела об оспаривании ненормативных правовых актов, решений государственных органов',
+                  'Представление интересов во всех государственных органах и учреждениях',
                   'Сопровождение при проведении выездных проверок налоговыми органами',
-                  'Взыскание задолженности с контрагентов',
+                  'Взыскание задолженности с контрагентов по делам вытекающим из предпринимательской деятельности',
                   'Представление интересов на стадии исполнения решений суда',
                   'Работа со службой судебных приставов'
                 ]
@@ -142,34 +176,61 @@ export default function Index() {
               {
                 icon: 'Briefcase',
                 title: 'Юридическое сопровождение бизнеса',
+                description: 'Абонентское и комплексное юридическое обслуживание бизнеса',
                 items: [
                   'Абонентское юридическое обслуживание и сопровождение бизнеса',
                   'Комплексное юридическое обслуживание бизнеса',
-                  'Разработка и согласование договоров',
-                  'Претензионно-исковая работа',
+                  'Разработка и согласование договоров в рамках абонентского обслуживания',
+                  'Претензионно-исковая работа в рамках абонентского обслуживания',
                   'Экспертиза договоров и выявление потенциальных рисков',
                   'Подготовка необходимых корпоративных документов',
                   'Подготовка документов для государственной регистрации'
                 ]
               }
             ].map((service, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary md:col-span-2 lg:col-span-3">
+              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 border-2 hover:border-primary">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="bg-primary/10 w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Icon name={service.icon} size={28} className="text-primary" />
                   </div>
-                  <h3 className="text-2xl font-bold text-secondary pt-2">
-                    {service.title}
-                  </h3>
+                  <div className="flex-1">
+                    <h3 className="text-xl md:text-2xl font-bold text-secondary mb-2">
+                      {service.title}
+                    </h3>
+                    <p className="text-muted-foreground text-sm">
+                      {service.description}
+                    </p>
+                  </div>
                 </div>
-                <ul className="grid md:grid-cols-2 gap-3">
-                  {service.items.map((item: string, itemIndex: number) => (
-                    <li key={itemIndex} className="flex items-start gap-2 text-muted-foreground">
-                      <Icon name="CheckCircle" size={18} className="text-primary mt-1 flex-shrink-0" />
-                      <span className="leading-relaxed">{item}</span>
-                    </li>
-                  ))}
-                </ul>
+                
+                {expandedService === index ? (
+                  <>
+                    <ul className="space-y-2 mb-4">
+                      {service.items.map((item: string, itemIndex: number) => (
+                        <li key={itemIndex} className="flex items-start gap-2 text-muted-foreground text-sm">
+                          <Icon name="CheckCircle" size={16} className="text-primary mt-1 flex-shrink-0" />
+                          <span className="leading-relaxed">{item}</span>
+                        </li>
+                      ))}
+                    </ul>
+                    <Button 
+                      variant="outline" 
+                      onClick={() => setExpandedService(null)}
+                      className="w-full"
+                    >
+                      <Icon name="ChevronUp" size={20} className="mr-2" />
+                      Скрыть
+                    </Button>
+                  </>
+                ) : (
+                  <Button 
+                    onClick={() => setExpandedService(index)}
+                    className="w-full mt-2"
+                  >
+                    <Icon name="ChevronDown" size={20} className="mr-2" />
+                    Подробнее
+                  </Button>
+                )}
               </Card>
             ))}
           </div>
