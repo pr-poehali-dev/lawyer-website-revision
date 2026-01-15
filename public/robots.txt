@@ -1,14 +1,24 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://lawyer-website-revision.poehali.app/sitemap.xml
+
+# Основные поисковые системы
 User-agent: Googlebot
 Allow: /
 
 User-agent: Bingbot
 Allow: /
 
+User-agent: Yandex
+Allow: /
+
+User-agent: YandexBot
+Allow: /
+
+# Социальные сети
 User-agent: Twitterbot
 Allow: /
 
 User-agent: facebookexternalhit
-Allow: /
-
-User-agent: *
 Allow: /

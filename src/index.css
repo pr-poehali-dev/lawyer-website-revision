@@ -110,4 +110,23 @@
   h6 {
     font-family: "Montserrat", sans-serif;
   }
+
+  /* Защита изображений от скачивания */
+  img {
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    pointer-events: none;
+    -webkit-touch-callout: none;
+  }
+
+  /* Возвращаем pointer-events для кликабельных элементов */
+  button,
+  a,
+  input,
+  textarea,
+  select {
+    pointer-events: auto;
+  }
 }
