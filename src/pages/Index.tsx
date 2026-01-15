@@ -42,15 +42,15 @@ export default function Index() {
   };
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white">
-      <header className="bg-white shadow-sm sticky top-0 z-50">
+    <div className="min-h-screen bg-background">
+      <header className="bg-secondary/50 backdrop-blur-sm border-b border-border sticky top-0 z-50">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex flex-col">
-              <h1 className="text-xl md:text-2xl font-bold text-primary">
+              <h1 className="text-xl md:text-2xl font-bold text-foreground">
                 Кабинетский Адвокат
               </h1>
-              <p className="text-sm md:text-base text-secondary font-semibold mt-1">
+              <p className="text-sm md:text-base text-foreground/80 font-semibold mt-1">
                 Адвоката Мушовец А. Г.
               </p>
               <p className="text-xs md:text-sm text-muted-foreground mt-1">
@@ -86,7 +86,7 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-accent text-white relative overflow-hidden">
+      <section className="py-16 md:py-24 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 gap-12 items-center">
             <div className="text-left">
@@ -96,11 +96,11 @@ export default function Index() {
               <p className="text-xl md:text-2xl mb-4 opacity-90">
                 Более 20 лет практики
               </p>
-              <div className="mt-8 inline-flex flex-col items-start bg-white/10 backdrop-blur-sm px-8 py-6 rounded-lg">
-                <p className="text-3xl md:text-4xl font-bold mb-2">ТЕЛЕФОН:</p>
+              <div className="mt-8 inline-flex flex-col items-start bg-card/50 backdrop-blur-sm border border-primary/30 px-8 py-6 rounded-lg">
+                <p className="text-3xl md:text-4xl font-bold mb-2 text-primary">ТЕЛЕФОН:</p>
                 <a 
                   href="tel:+79060194020" 
-                  className="text-3xl md:text-5xl font-bold hover:text-white/80 transition-colors"
+                  className="text-3xl md:text-5xl font-bold text-foreground hover:text-primary transition-colors"
                 >
                   +7 906 019-40-20
                 </a>
@@ -188,13 +188,13 @@ export default function Index() {
                 ]
               }
             ].map((service, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 border-2 hover:border-primary">
+              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 border border-border bg-card hover:border-primary">
                 <div className="flex items-start gap-4 mb-4">
-                  <div className="bg-primary/10 w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
+                  <div className="bg-primary/20 w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Icon name={service.icon} size={28} className="text-primary" />
                   </div>
                   <div className="flex-1">
-                    <h3 className="text-xl md:text-2xl font-bold text-secondary mb-2">
+                    <h3 className="text-xl md:text-2xl font-bold text-foreground mb-2">
                       {service.title}
                     </h3>
                     <p className="text-muted-foreground text-sm">
@@ -237,7 +237,7 @@ export default function Index() {
         </div>
       </section>
 
-      <section id="about" className="py-16 md:py-24 bg-slate-50">
+      <section id="about" className="py-16 md:py-24 bg-secondary/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary">
@@ -246,12 +246,12 @@ export default function Index() {
             <Card className="p-8 md:p-12">
               <div className="flex flex-col md:flex-row gap-8 items-start">
                 <div className="flex-shrink-0">
-                  <div className="w-32 h-32 rounded-full bg-gradient-to-br from-primary to-accent flex items-center justify-center">
-                    <Icon name="User" size={64} className="text-white" />
+                  <div className="w-32 h-32 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
+                    <Icon name="User" size={64} className="text-primary" />
                   </div>
                 </div>
                 <div className="flex-1">
-                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-secondary">
+                  <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
                     Мушовец Алексей Геннадьевич
                   </h3>
                   <div className="space-y-4 text-foreground leading-relaxed">
@@ -378,7 +378,7 @@ export default function Index() {
         </div>
       </section>
 
-      <footer className="bg-secondary text-white py-8">
+      <footer className="bg-secondary/50 border-t border-border text-foreground py-8">
         <div className="container mx-auto px-4">
           <p className="text-center text-base md:text-lg">
             Мушовец Алексей Геннадьевич
