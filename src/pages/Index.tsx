@@ -85,22 +85,35 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-accent text-white">
-        <div className="container mx-auto px-4 text-center">
-          <h2 className="text-4xl md:text-6xl font-bold mb-6">
-            Профессиональная<br />юридическая защита
-          </h2>
-          <p className="text-xl md:text-2xl mb-4 opacity-90">
-            Более 20 лет практики
-          </p>
-          <div className="mt-8 inline-flex flex-col items-center bg-white/10 backdrop-blur-sm px-8 py-6 rounded-lg">
-            <p className="text-3xl md:text-4xl font-bold mb-2">ТЕЛЕФОН:</p>
-            <a 
-              href="tel:+79060194020" 
-              className="text-3xl md:text-5xl font-bold hover:text-white/80 transition-colors"
-            >
-              +7 906 019-40-20
-            </a>
+      <section className="py-16 md:py-24 bg-gradient-to-r from-primary to-accent text-white relative overflow-hidden">
+        <div className="container mx-auto px-4">
+          <div className="grid md:grid-cols-2 gap-12 items-center">
+            <div className="text-left">
+              <h2 className="text-4xl md:text-6xl font-bold mb-6">
+                Квалифицированная<br />юридическая защита
+              </h2>
+              <p className="text-xl md:text-2xl mb-4 opacity-90">
+                Более 20 лет практики
+              </p>
+              <div className="mt-8 inline-flex flex-col items-start bg-white/10 backdrop-blur-sm px-8 py-6 rounded-lg">
+                <p className="text-3xl md:text-4xl font-bold mb-2">ТЕЛЕФОН:</p>
+                <a 
+                  href="tel:+79060194020" 
+                  className="text-3xl md:text-5xl font-bold hover:text-white/80 transition-colors"
+                >
+                  +7 906 019-40-20
+                </a>
+              </div>
+            </div>
+            <div className="flex justify-center">
+              <div className="relative">
+                <img 
+                  src="https://cdn.poehali.dev/files/image.png" 
+                  alt="Мушовец Алексей Геннадьевич" 
+                  className="rounded-lg shadow-2xl max-w-full h-auto"
+                />
+              </div>
+            </div>
           </div>
         </div>
       </section>
@@ -113,46 +126,50 @@ export default function Index() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {[
               {
-                icon: 'Scale',
-                title: 'Уголовное право',
-                description: 'Защита по уголовным делам на всех стадиях процесса'
-              },
-              {
-                icon: 'FileText',
-                title: 'Гражданское право',
-                description: 'Разрешение гражданских споров, защита прав и интересов'
+                icon: 'Building2',
+                title: 'Арбитражные споры',
+                items: [
+                  'Консультирование юридических лиц и индивидуальных предпринимателей по вопросам правоприменительной практики',
+                  'Составление и подача исковых заявлений, ходатайств в арбитражный суд',
+                  'Представление интересов в арбитражных судах всех уровней',
+                  'Защита интересов во всех государственных органах и учреждениях',
+                  'Сопровождение при проведении выездных проверок налоговыми органами',
+                  'Взыскание задолженности с контрагентов',
+                  'Представление интересов на стадии исполнения решений суда',
+                  'Работа со службой судебных приставов'
+                ]
               },
               {
                 icon: 'Briefcase',
-                title: 'Корпоративное право',
-                description: 'Юридическое сопровождение бизнеса и сделок'
-              },
-              {
-                icon: 'Users',
-                title: 'Семейное право',
-                description: 'Споры о разводе, алиментах, разделе имущества'
-              },
-              {
-                icon: 'Home',
-                title: 'Жилищное право',
-                description: 'Защита жилищных прав, споры с застройщиками'
-              },
-              {
-                icon: 'Shield',
-                title: 'Представительство в суде',
-                description: 'Профессиональная защита ваших интересов в судах всех инстанций'
+                title: 'Юридическое сопровождение бизнеса',
+                items: [
+                  'Абонентское юридическое обслуживание и сопровождение бизнеса',
+                  'Комплексное юридическое обслуживание бизнеса',
+                  'Разработка и согласование договоров',
+                  'Претензионно-исковая работа',
+                  'Экспертиза договоров и выявление потенциальных рисков',
+                  'Подготовка необходимых корпоративных документов',
+                  'Подготовка документов для государственной регистрации'
+                ]
               }
             ].map((service, index) => (
-              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary">
-                <div className="bg-primary/10 w-14 h-14 rounded-lg flex items-center justify-center mb-4">
-                  <Icon name={service.icon} size={28} className="text-primary" />
+              <Card key={index} className="p-6 hover:shadow-lg transition-all duration-300 hover:-translate-y-1 border-2 hover:border-primary md:col-span-2 lg:col-span-3">
+                <div className="flex items-start gap-4 mb-4">
+                  <div className="bg-primary/10 w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
+                    <Icon name={service.icon} size={28} className="text-primary" />
+                  </div>
+                  <h3 className="text-2xl font-bold text-secondary pt-2">
+                    {service.title}
+                  </h3>
                 </div>
-                <h3 className="text-xl font-bold mb-3 text-secondary">
-                  {service.title}
-                </h3>
-                <p className="text-muted-foreground leading-relaxed">
-                  {service.description}
-                </p>
+                <ul className="grid md:grid-cols-2 gap-3">
+                  {service.items.map((item: string, itemIndex: number) => (
+                    <li key={itemIndex} className="flex items-start gap-2 text-muted-foreground">
+                      <Icon name="CheckCircle" size={18} className="text-primary mt-1 flex-shrink-0" />
+                      <span className="leading-relaxed">{item}</span>
+                    </li>
+                  ))}
+                </ul>
               </Card>
             ))}
           </div>
