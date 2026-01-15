@@ -252,7 +252,7 @@ export default function Index() {
                   <img 
                     src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
                     alt="Мушовец Алексей Геннадьевич" 
-                    className="w-40 h-40 rounded-full object-cover object-top border-4 border-primary shadow-xl scale-150 origin-center"
+                    className="w-32 h-32 rounded-full object-cover object-top border-4 border-primary shadow-xl"
                   />
                 </div>
                 <div className="flex-1">
@@ -269,16 +269,19 @@ export default function Index() {
                       <span>Регистрационный номер в реестре адвокатов: <strong>77/14943</strong></span>
                     </p>
                     <p className="flex items-start gap-2">
-                      <Icon name="BookOpen" size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span>Специализация на уголовном, гражданском и корпоративном праве</span>
+                      <Icon name="Scale" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Успешная практика в уголовных делах — прекращение преследований, переквалификация, смягчение наказаний, УДО</span>
                     </p>
                     <p className="flex items-start gap-2">
                       <Icon name="TrendingUp" size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span>Сотни успешно завершенных дел и довольных клиентов</span>
+                      <span>Гражданские и арбитражные дела — взыскано сотни миллионов рублей задолженности, сохранено имущество доверителей</span>
                     </p>
-                    <p className="mt-6">
-                      Предоставляю квалифицированную юридическую помощь физическим и юридическим лицам. 
-                      Индивидуальный подход к каждому клиенту, профессионализм и конфиденциальность гарантированы.
+                    <p className="flex items-start gap-2">
+                      <Icon name="Briefcase" size={20} className="text-primary mt-1 flex-shrink-0" />
+                      <span>Комплексное правовое сопровождение бизнеса, налоговые споры, представительство в судах всех инстанций</span>
+                    </p>
+                    <p className="mt-6 font-semibold text-primary">
+                      Найдем оптимальный путь разрешения даже самых сложных жизненных ситуаций
                     </p>
                   </div>
                 </div>
@@ -374,9 +377,10 @@ export default function Index() {
                     >
                       Я согласен на{' '}
                       <a 
-                        href="#privacy-policy" 
+                        href="/privacy-policy" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-primary hover:underline"
-                        onClick={(e) => { e.preventDefault(); alert('Политика обработки персональных данных'); }}
                       >
                         обработку персональных данных
                       </a>
@@ -396,9 +400,10 @@ export default function Index() {
                     >
                       Я ознакомлен с{' '}
                       <a 
-                        href="#confidentiality" 
+                        href="/confidentiality" 
+                        target="_blank"
+                        rel="noopener noreferrer"
                         className="text-primary hover:underline"
-                        onClick={(e) => { e.preventDefault(); alert('Политика конфиденциальности'); }}
                       >
                         политикой конфиденциальности
                       </a>
