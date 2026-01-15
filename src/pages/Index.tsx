@@ -13,6 +13,7 @@ export default function Index() {
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
   const [agreedToTerms, setAgreedToTerms] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -35,7 +36,9 @@ export default function Index() {
 
       if (response.ok) {
         form.reset();
-        alert('Ваша заявка успешно отправлена! Мы свяжемся с вами в ближайшее время.');
+        setIsFormSubmitted(true);
+        setAgreedToPrivacy(false);
+        setAgreedToTerms(false);
       } else {
         alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
       }
@@ -387,7 +390,52 @@ export default function Index() {
           
           <div className="max-w-3xl mx-auto">
             <Card className="p-6 sm:p-8 md:p-10 lg:p-12 shadow-xl">
-              <form onSubmit={handleSubmit} className="space-y-6">
+              {isFormSubmitted ? (
+                <div className="text-center py-8 sm:py-12">
+                  <div className="mb-6 flex justify-center">
+                    <div className="w-20 h-20 sm:w-24 sm:h-24 bg-primary/10 rounded-full flex items-center justify-center">
+                      <Icon name="CheckCircle" size={48} className="text-primary" />
+                    </div>
+                  </div>
+                  <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 text-foreground">
+                    Заявка успешно отправлена!
+                  </h3>
+                  <p className="text-base sm:text-lg md:text-xl text-muted-foreground mb-6 leading-relaxed">
+                    Спасибо за обращение! Я свяжусь с вами в ближайшее время для обсуждения вашего вопроса.
+                  </p>
+                  <div className="flex flex-col sm:flex-row gap-4 justify-center items-center mt-8">
+                    <Button
+                      size="lg"
+                      onClick={() => setIsFormSubmitted(false)}
+                      variant="outline"
+                      className="w-full sm:w-auto"
+                    >
+                      Отправить еще одну заявку
+                    </Button>
+                    <Button
+                      size="lg"
+                      onClick={() => window.location.href = 'tel:+79060194020'}
+                      className="w-full sm:w-auto"
+                    >
+                      <Icon name="Phone" size={20} className="mr-2" />
+                      Позвонить сейчас
+                    </Button>
+                  </div>
+                  <div className="mt-8 pt-8 border-t border-border">
+                    <p className="text-sm text-muted-foreground mb-3">Или свяжитесь со мной напрямую:</p>
+                    <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                      <a href="tel:+79060194020" className="text-primary hover:underline font-semibold">
+                        +7 906 019-40-20
+                      </a>
+                      <span className="hidden sm:inline text-muted-foreground">|</span>
+                      <a href="mailto:advokatmushovets@mail.ru" className="text-primary hover:underline font-semibold">
+                        advokatmushovets@mail.ru
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              ) : (
+                <form onSubmit={handleSubmit} className="space-y-6">
                 <input 
                   type="hidden" 
                   name="access_key" 
@@ -514,6 +562,7 @@ export default function Index() {
                   )}
                 </Button>
               </form>
+              )}
             </Card>
           </div>
         </div>
