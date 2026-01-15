@@ -109,7 +109,7 @@ export default function Index() {
                 </a>
               </div>
             </div>
-            <div className="lg:col-span-2 flex justify-center lg:justify-end">
+            <div className="lg:col-span-2 flex justify-center lg:justify-start lg:ml-8">
               <div className="relative w-full max-w-sm">
                 <img 
                   src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
@@ -252,7 +252,7 @@ export default function Index() {
                   <img 
                     src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
                     alt="Мушовец Алексей Геннадьевич" 
-                    className="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-xl"
+                    className="w-40 h-40 rounded-full object-cover object-top border-4 border-primary shadow-xl scale-150 origin-center"
                   />
                 </div>
                 <div className="flex-1">
@@ -372,7 +372,14 @@ export default function Index() {
                       htmlFor="privacy" 
                       className="text-sm leading-relaxed cursor-pointer text-foreground/90"
                     >
-                      Я согласен на обработку персональных данных
+                      Я согласен на{' '}
+                      <a 
+                        href="#privacy-policy" 
+                        className="text-primary hover:underline"
+                        onClick={(e) => { e.preventDefault(); alert('Политика обработки персональных данных'); }}
+                      >
+                        обработку персональных данных
+                      </a>
                     </Label>
                   </div>
 
@@ -387,7 +394,14 @@ export default function Index() {
                       htmlFor="terms" 
                       className="text-sm leading-relaxed cursor-pointer text-foreground/90"
                     >
-                      Я ознакомлен с политикой конфиденциальности
+                      Я ознакомлен с{' '}
+                      <a 
+                        href="#confidentiality" 
+                        className="text-primary hover:underline"
+                        onClick={(e) => { e.preventDefault(); alert('Политика конфиденциальности'); }}
+                      >
+                        политикой конфиденциальности
+                      </a>
                     </Label>
                   </div>
                 </div>
