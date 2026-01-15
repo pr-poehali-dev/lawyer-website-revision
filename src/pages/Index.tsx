@@ -11,7 +11,7 @@ export default function Index() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [expandedService, setExpandedService] = useState<number | null>(null);
   const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
-  const [agreedToTerms, setAgreedToTerms] = useState(false);
+
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isFormSubmitted, setIsFormSubmitted] = useState(false);
 
@@ -60,7 +60,6 @@ export default function Index() {
         form.reset();
         setIsFormSubmitted(true);
         setAgreedToPrivacy(false);
-        setAgreedToTerms(false);
       } else {
         alert('Произошла ошибка при отправке. Пожалуйста, попробуйте позже.');
       }
@@ -84,7 +83,7 @@ export default function Index() {
                 Адвоката Мушовец Алексея Геннадьевича
               </p>
               <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-foreground font-bold mt-0.5">
-                города Москвы
+                город Москва
               </p>
               <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mt-0.5 truncate">
                 Регистрационный номер в реестре 77/14943
@@ -185,14 +184,6 @@ export default function Index() {
                     >
                       advokatmushovets@mail.ru
                     </a>
-                  </div>
-                </div>
-
-                <div className="flex items-center gap-2.5 sm:gap-3 bg-card/60 backdrop-blur-sm border border-primary/20 px-3 sm:px-4 md:px-5 py-2.5 sm:py-3 md:py-4 rounded-xl">
-                  <Icon name="Award" size={18} className="text-primary flex-shrink-0 sm:w-5 sm:h-5 md:w-6 md:h-6" />
-                  <div className="flex flex-col">
-                    <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">Регистрационный номер</span>
-                    <span className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground">77/14943</span>
                   </div>
                 </div>
 
@@ -367,25 +358,6 @@ export default function Index() {
                       <Icon name="Award" size={20} className="text-primary mt-1 flex-shrink-0" />
                       <span><strong>Более 20 лет</strong> успешной адвокатской практики</span>
                     </p>
-                    <p className="flex items-start gap-2">
-                      <Icon name="CheckCircle" size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span>Регистрационный номер в реестре адвокатов: <strong>77/14943</strong></span>
-                    </p>
-                    <p className="flex items-start gap-2">
-                      <Icon name="Scale" size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span>Успешная практика в уголовных делах — прекращение преследований, переквалификация, смягчение наказаний, УДО</span>
-                    </p>
-                    <p className="flex items-start gap-2">
-                      <Icon name="TrendingUp" size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span>Гражданские и арбитражные дела — взыскано сотни миллионов рублей задолженности, сохранено имущество доверителей</span>
-                    </p>
-                    <p className="flex items-start gap-2">
-                      <Icon name="Briefcase" size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span>Комплексное правовое сопровождение бизнеса, налоговые споры, представительство в судах всех инстанций</span>
-                    </p>
-                    <p className="mt-6 font-semibold text-primary">
-                      Найдем оптимальный путь разрешения даже самых сложных жизненных ситуаций
-                    </p>
                     <div className="mt-6 pt-6 border-t border-border space-y-3">
                       <p className="flex items-center gap-2">
                         <Icon name="Phone" size={20} className="text-primary flex-shrink-0" />
@@ -545,33 +517,11 @@ export default function Index() {
                     </Label>
                   </div>
 
-                  <div className="flex items-start gap-3">
-                    <Checkbox 
-                      id="terms" 
-                      checked={agreedToTerms}
-                      onCheckedChange={(checked) => setAgreedToTerms(checked as boolean)}
-                      className="mt-1"
-                    />
-                    <Label 
-                      htmlFor="terms" 
-                      className="text-sm leading-relaxed cursor-pointer text-foreground/90"
-                    >
-                      Я ознакомлен с{' '}
-                      <a 
-                        href="/confidentiality" 
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-primary hover:underline"
-                      >
-                        политикой конфиденциальности
-                      </a>
-                    </Label>
-                  </div>
                 </div>
 
                 <Button 
                   type="submit" 
-                  disabled={isSubmitting || !agreedToPrivacy || !agreedToTerms}
+                  disabled={isSubmitting || !agreedToPrivacy}
                   className="w-full h-14 text-lg font-semibold"
                 >
                   {isSubmitting ? (
@@ -598,6 +548,9 @@ export default function Index() {
           <div className="flex flex-col items-center gap-2">
             <p className="text-center text-sm sm:text-base md:text-lg font-semibold">
               Мушовец Алексей Геннадьевич
+            </p>
+            <p className="text-center text-xs sm:text-sm text-muted-foreground">
+              адвокат город Москва
             </p>
             <p className="text-center text-xs sm:text-sm text-muted-foreground flex items-center gap-1">
               <Icon name="Copyright" size={14} className="sm:w-4 sm:h-4" />
