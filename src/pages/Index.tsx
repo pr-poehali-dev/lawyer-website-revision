@@ -4,11 +4,14 @@ import { Card } from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
+import { Checkbox } from '@/components/ui/checkbox';
 import Icon from '@/components/ui/icon';
 
 export default function Index() {
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [expandedService, setExpandedService] = useState<number | null>(null);
+  const [agreedToPrivacy, setAgreedToPrivacy] = useState(false);
+  const [agreedToTerms, setAgreedToTerms] = useState(false);
 
   const scrollToSection = (id: string) => {
     const element = document.getElementById(id);
@@ -88,9 +91,9 @@ export default function Index() {
 
       <section className="py-12 md:py-20 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-8 items-center">
-            <div className="text-left">
-              <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+          <div className="grid lg:grid-cols-5 gap-8 items-center">
+            <div className="lg:col-span-3 text-left">
+              <h2 className="text-3xl md:text-4xl lg:text-5xl font-bold mb-4 leading-tight">
                 Профессиональная<br />защита ваших прав
               </h2>
               <p className="text-lg md:text-xl mb-6 opacity-90">
@@ -106,8 +109,8 @@ export default function Index() {
                 </a>
               </div>
             </div>
-            <div className="flex justify-center md:justify-end">
-              <div className="relative max-w-md">
+            <div className="lg:col-span-2 flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-sm">
                 <img 
                   src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
                   alt="Мушовец Алексей Геннадьевич" 
@@ -188,7 +191,7 @@ export default function Index() {
                 ]
               }
             ].map((service, index) => (
-              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 border border-border bg-card hover:border-primary">
+              <Card key={index} className="p-6 hover:shadow-xl transition-all duration-300 border border-border bg-card hover:border-primary flex flex-col">
                 <div className="flex items-start gap-4 mb-4">
                   <div className="bg-primary/20 w-14 h-14 rounded-lg flex items-center justify-center flex-shrink-0">
                     <Icon name={service.icon} size={28} className="text-primary" />
@@ -205,7 +208,7 @@ export default function Index() {
                 
                 {expandedService === index ? (
                   <>
-                    <ul className="space-y-2 mb-4">
+                    <ul className="space-y-2 mb-4 flex-grow">
                       {service.items.map((item: string, itemIndex: number) => (
                         <li key={itemIndex} className="flex items-start gap-2 text-muted-foreground text-sm">
                           <Icon name="CheckCircle" size={16} className="text-primary mt-1 flex-shrink-0" />
@@ -216,7 +219,7 @@ export default function Index() {
                     <Button 
                       variant="outline" 
                       onClick={() => setExpandedService(null)}
-                      className="w-full"
+                      className="w-full mt-auto"
                     >
                       <Icon name="ChevronUp" size={20} className="mr-2" />
                       Скрыть
@@ -225,7 +228,7 @@ export default function Index() {
                 ) : (
                   <Button 
                     onClick={() => setExpandedService(index)}
-                    className="w-full mt-2"
+                    className="w-full mt-auto"
                   >
                     <Icon name="ChevronDown" size={20} className="mr-2" />
                     Подробнее
@@ -245,10 +248,12 @@ export default function Index() {
             </h2>
             <Card className="p-8 md:p-12">
               <div className="flex flex-col md:flex-row gap-8 items-start">
-                <div className="flex-shrink-0">
-                  <div className="w-32 h-32 rounded-full bg-primary/20 border-2 border-primary flex items-center justify-center">
-                    <Icon name="User" size={64} className="text-primary" />
-                  </div>
+                <div className="flex-shrink-0 mx-auto md:mx-0">
+                  <img 
+                    src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
+                    alt="Мушовец Алексей Геннадьевич" 
+                    className="w-40 h-40 rounded-full object-cover border-4 border-primary shadow-xl"
+                  />
                 </div>
                 <div className="flex-1">
                   <h3 className="text-2xl md:text-3xl font-bold mb-4 text-foreground">
@@ -355,9 +360,41 @@ export default function Index() {
                   />
                 </div>
 
+                <div className="space-y-4 pt-2">
+                  <div className="flex items-start gap-3">
+                    <Checkbox 
+                      id="privacy" 
+                      checked={agreedToPrivacy}
+                      onCheckedChange={(checked) => setAgreedToPrivacy(checked as boolean)}
+                      className="mt-1"
+                    />
+                    <Label 
+                      htmlFor="privacy" 
+                      className="text-sm leading-relaxed cursor-pointer text-foreground/90"
+                    >
+                      Я согласен на обработку персональных данных
+                    </Label>
+                  </div>
+
+                  <div className="flex items-start gap-3">
+                    <Checkbox 
+                      id="terms" 
+                      checked={agreedToTerms}
+                      onCheckedChange={(checked) => setAgreedToTerms(checked as boolean)}
+                      className="mt-1"
+                    />
+                    <Label 
+                      htmlFor="terms" 
+                      className="text-sm leading-relaxed cursor-pointer text-foreground/90"
+                    >
+                      Я ознакомлен с политикой конфиденциальности
+                    </Label>
+                  </div>
+                </div>
+
                 <Button 
                   type="submit" 
-                  disabled={isSubmitting}
+                  disabled={isSubmitting || !agreedToPrivacy || !agreedToTerms}
                   className="w-full h-14 text-lg font-semibold"
                 >
                   {isSubmitting ? (
@@ -380,9 +417,15 @@ export default function Index() {
 
       <footer className="bg-secondary/50 border-t border-border text-foreground py-8">
         <div className="container mx-auto px-4">
-          <p className="text-center text-base md:text-lg">
-            Мушовец Алексей Геннадьевич
-          </p>
+          <div className="flex flex-col items-center gap-2">
+            <p className="text-center text-base md:text-lg font-semibold">
+              Мушовец Алексей Геннадьевич
+            </p>
+            <p className="text-center text-sm text-muted-foreground flex items-center gap-1">
+              <Icon name="Copyright" size={16} />
+              {new Date().getFullYear()} Все права защищены
+            </p>
+          </div>
         </div>
       </footer>
     </div>
