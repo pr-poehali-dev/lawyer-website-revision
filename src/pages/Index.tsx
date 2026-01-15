@@ -43,37 +43,37 @@ export default function Index() {
 
   return (
     <div className="min-h-screen bg-background">
-      <header className="bg-secondary/50 backdrop-blur-sm border-b border-border sticky top-0 z-50">
-        <div className="container mx-auto px-4 py-4">
+      <header className="bg-secondary border-b border-border sticky top-0 z-50">
+        <div className="container mx-auto px-4 py-3">
           <div className="flex items-center justify-between">
             <div className="flex flex-col">
-              <h1 className="text-xl md:text-2xl font-bold text-foreground">
+              <h1 className="text-lg md:text-xl font-bold text-foreground">
                 Кабинетский Адвокат
               </h1>
-              <p className="text-sm md:text-base text-foreground/80 font-semibold mt-1">
+              <p className="text-xs md:text-sm text-foreground/80 font-semibold mt-0.5">
                 Адвоката Мушовец А. Г.
               </p>
-              <p className="text-xs md:text-sm text-muted-foreground mt-1">
+              <p className="text-xs text-muted-foreground mt-0.5">
                 Регистрационный номер в реестре 77/14943
               </p>
             </div>
             
-            <nav className="hidden md:flex gap-6">
+            <nav className="hidden md:flex gap-4">
               <button
                 onClick={() => scrollToSection('services')}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground hover:text-primary transition-colors font-medium text-sm"
               >
                 Услуги
               </button>
               <button
                 onClick={() => scrollToSection('about')}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground hover:text-primary transition-colors font-medium text-sm"
               >
                 Обо мне
               </button>
               <button
                 onClick={() => scrollToSection('contact')}
-                className="text-foreground hover:text-primary transition-colors font-medium"
+                className="text-foreground hover:text-primary transition-colors font-medium text-sm"
               >
                 Контакты
               </button>
@@ -86,32 +86,32 @@ export default function Index() {
         </div>
       </header>
 
-      <section className="py-16 md:py-24 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
+      <section className="py-12 md:py-20 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
         <div className="container mx-auto px-4">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+          <div className="grid md:grid-cols-2 gap-8 items-center">
             <div className="text-left">
-              <h2 className="text-4xl md:text-6xl font-bold mb-6">
-                Квалифицированная<br />юридическая защита
+              <h2 className="text-3xl md:text-5xl font-bold mb-4 leading-tight">
+                Профессиональная<br />защита ваших прав
               </h2>
-              <p className="text-xl md:text-2xl mb-4 opacity-90">
+              <p className="text-lg md:text-xl mb-6 opacity-90">
                 Более 20 лет практики
               </p>
-              <div className="mt-8 inline-flex flex-col items-start bg-card/50 backdrop-blur-sm border border-primary/30 px-8 py-6 rounded-lg">
-                <p className="text-3xl md:text-4xl font-bold mb-2 text-primary">ТЕЛЕФОН:</p>
+              <div className="inline-flex items-center gap-3 bg-card/50 backdrop-blur-sm border border-primary/30 px-6 py-4 rounded-lg">
+                <p className="text-xl md:text-2xl font-bold text-primary whitespace-nowrap">ТЕЛЕФОН:</p>
                 <a 
                   href="tel:+79060194020" 
-                  className="text-3xl md:text-5xl font-bold text-foreground hover:text-primary transition-colors"
+                  className="text-xl md:text-2xl font-bold text-foreground hover:text-primary transition-colors whitespace-nowrap"
                 >
                   +7 906 019-40-20
                 </a>
               </div>
             </div>
-            <div className="flex justify-center">
-              <div className="relative">
+            <div className="flex justify-center md:justify-end">
+              <div className="relative max-w-md">
                 <img 
                   src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
                   alt="Мушовец Алексей Геннадьевич" 
-                  className="rounded-lg shadow-2xl max-w-full h-auto"
+                  className="rounded-lg shadow-2xl w-full h-auto"
                 />
               </div>
             </div>
