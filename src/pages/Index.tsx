@@ -199,7 +199,7 @@ export default function Index() {
             </div>
 
             <div className="flex justify-center lg:justify-end order-1 lg:order-2">
-              <div className="relative w-full max-w-[280px] xs:max-w-xs sm:max-w-sm md:max-w-md lg:mt-12">
+              <div className="relative w-full max-w-[280px] xs:max-w-xs sm:max-w-sm md:max-w-md lg:mt-14">
                 <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl"></div>
                 <img 
                   src="https://cdn.poehali.dev/projects/993f6506-a672-4203-b8f2-a42159e84058/bucket/082535a1-1b1c-48b4-bd0c-80a53c4dbe4c.png" 
