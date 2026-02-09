@@ -149,15 +149,8 @@ export default function Index() {
 
       <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 bg-gradient-to-br from-background via-secondary to-background text-foreground relative overflow-hidden">
         <div className="container mx-auto px-3 sm:px-4 md:px-6">
-          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center max-w-6xl mx-auto">
+          <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-start max-w-6xl mx-auto">
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
-              <div className="flex items-center gap-4 mb-4 lg:hidden">
-                <img 
-                  src="https://cdn.poehali.dev/projects/993f6506-a672-4203-b8f2-a42159e84058/bucket/082535a1-1b1c-48b4-bd0c-80a53c4dbe4c.png"
-                  alt="Майорова Анна Владимировна"
-                  className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover shadow-lg"
-                />
-              </div>
               <div>
                 <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight">
                   Профессиональная защита ваших прав
@@ -205,13 +198,13 @@ export default function Index() {
               </div>
             </div>
 
-            <div className="flex justify-center lg:justify-end order-first lg:order-last">
-              <div className="relative w-full max-w-[280px] xs:max-w-xs sm:max-w-sm md:max-w-md">
+            <div className="hidden lg:flex justify-center lg:justify-end">
+              <div className="relative w-full max-w-sm">
                 <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl"></div>
                 <img 
                   src="https://cdn.poehali.dev/projects/993f6506-a672-4203-b8f2-a42159e84058/bucket/082535a1-1b1c-48b4-bd0c-80a53c4dbe4c.png" 
                   alt="Адвокат Мушовец Алексей Геннадьевич - более 20 лет практики" 
-                  className="relative rounded-xl sm:rounded-2xl shadow-2xl w-full h-auto object-cover border-2 sm:border-4 border-primary/30 select-none"
+                  className="relative rounded-2xl shadow-2xl w-full h-auto object-cover border-4 border-primary/30 select-none"
                   draggable="false"
                   onContextMenu={(e) => e.preventDefault()}
                 />
