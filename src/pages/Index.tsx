@@ -80,13 +80,10 @@ export default function Index() {
                 Адвокатский кабинет
               </div>
               <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-foreground font-bold mt-0.5">
-                Адвоката Мушовец Алексея Геннадьевича
+                Адвоката Майоровой Анны Владимировны
               </p>
               <p className="text-[10px] sm:text-xs md:text-sm lg:text-base text-foreground font-bold mt-0.5">
                 город Москва
-              </p>
-              <p className="text-[9px] sm:text-[10px] md:text-xs text-muted-foreground mt-0.5 truncate">
-                Регистрационный номер в реестре 77/14943
               </p>
             </div>
             
@@ -151,6 +148,13 @@ export default function Index() {
         <div className="container mx-auto px-3 sm:px-4 md:px-6">
           <div className="grid lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 items-center max-w-6xl mx-auto">
             <div className="space-y-3 sm:space-y-4 md:space-y-6">
+              <div className="flex items-center gap-4 mb-4 lg:hidden">
+                <img 
+                  src="https://cdn.poehali.dev/projects/993f6506-a672-4203-b8f2-a42159e84058/bucket/082535a1-1b1c-48b4-bd0c-80a53c4dbe4c.png"
+                  alt="Майорова Анна Владимировна"
+                  className="w-24 h-24 sm:w-32 sm:h-32 rounded-2xl object-cover shadow-lg"
+                />
+              </div>
               <div>
                 <h1 className="text-2xl xs:text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight">
                   Профессиональная защита ваших прав
@@ -166,10 +170,10 @@ export default function Index() {
                   <div className="flex flex-col min-w-0">
                     <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">Телефон</span>
                     <a 
-                      href="tel:+79060194020" 
+                      href="tel:+79852552555" 
                       className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground hover:text-primary transition-colors"
                     >
-                      +7 906 019-40-20
+                      +7 985 255-25-55
                     </a>
                   </div>
                 </div>
@@ -179,10 +183,10 @@ export default function Index() {
                   <div className="flex flex-col min-w-0 overflow-hidden">
                     <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">Email</span>
                     <a 
-                      href="mailto:advokatmushovets@mail.ru" 
+                      href="mailto:avocat01@yandex.ru" 
                       className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-foreground hover:text-primary transition-colors break-all"
                     >
-                      advokatmushovets@mail.ru
+                      avocat01@yandex.ru
                     </a>
                   </div>
                 </div>
@@ -190,7 +194,7 @@ export default function Index() {
                 <Button 
                   size="lg"
                   className="w-full mt-2 sm:mt-3 md:mt-4 h-12 sm:h-14 text-base sm:text-lg font-bold shadow-lg hover:shadow-xl transition-all"
-                  onClick={() => window.location.href = 'tel:+79060194020'}
+                  onClick={() => window.location.href = 'tel:+79852552555'}
                 >
                   <Icon name="Phone" size={20} className="mr-2" />
                   Связаться со мной
@@ -202,9 +206,9 @@ export default function Index() {
               <div className="relative w-full max-w-[280px] xs:max-w-xs sm:max-w-sm md:max-w-md">
                 <div className="absolute inset-0 bg-primary/20 rounded-2xl blur-3xl"></div>
                 <img 
-                  src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
-                  alt="Адвокат Мушовец Алексей Геннадьевич - более 20 лет практики" 
-                  className="relative rounded-xl sm:rounded-2xl shadow-2xl w-full h-auto border-2 sm:border-4 border-primary/30 select-none"
+                  src="https://cdn.poehali.dev/projects/993f6506-a672-4203-b8f2-a42159e84058/bucket/082535a1-1b1c-48b4-bd0c-80a53c4dbe4c.png" 
+                  alt="Адвокат Майорова Анна Владимировна - более 20 лет практики" 
+                  className="relative rounded-xl sm:rounded-2xl shadow-2xl w-full h-auto object-cover border-2 sm:border-4 border-primary/30 select-none"
                   draggable="false"
                   onContextMenu={(e) => e.preventDefault()}
                 />
@@ -342,8 +346,8 @@ export default function Index() {
               <div className="flex flex-col md:flex-row gap-6 sm:gap-8 items-start">
                 <div className="flex-shrink-0 mx-auto md:mx-0">
                   <img 
-                    src="https://cdn.poehali.dev/files/photo_2026-01-15_13-09-24.jpg" 
-                    alt="Адвокат Мушовец Алексей Геннадьевич" 
+                    src="https://cdn.poehali.dev/projects/993f6506-a672-4203-b8f2-a42159e84058/bucket/082535a1-1b1c-48b4-bd0c-80a53c4dbe4c.png" 
+                    alt="Адвокат Майорова Анна Владимировна" 
                     className="w-24 h-24 sm:w-28 sm:h-28 md:w-32 md:h-32 rounded-full object-cover object-top border-4 border-primary shadow-xl select-none"
                     draggable="false"
                     onContextMenu={(e) => e.preventDefault()}
@@ -351,7 +355,7 @@ export default function Index() {
                 </div>
                 <div className="flex-1 text-center md:text-left">
                   <h3 className="text-xl sm:text-2xl md:text-3xl font-bold mb-3 sm:mb-4 text-foreground">
-                    Мушовец Алексей Геннадьевич
+                    Майорова Анна Владимировна
                   </h3>
                   <div className="space-y-4 text-foreground leading-relaxed">
                     <p className="flex items-start gap-2">
@@ -361,11 +365,11 @@ export default function Index() {
                     <div className="mt-6 pt-6 border-t border-border space-y-3">
                       <p className="flex items-center gap-2">
                         <Icon name="Phone" size={20} className="text-primary flex-shrink-0" />
-                        <a href="tel:+79060194020" className="hover:text-primary transition-colors">+7 906 019-40-20</a>
+                        <a href="tel:+79852552555" className="hover:text-primary transition-colors">+7 985 255-25-55</a>
                       </p>
                       <p className="flex items-center gap-2">
                         <Icon name="Mail" size={20} className="text-primary flex-shrink-0" />
-                        <a href="mailto:advokatmushovets@mail.ru" className="hover:text-primary transition-colors">advokatmushovets@mail.ru</a>
+                        <a href="mailto:avocat01@yandex.ru" className="hover:text-primary transition-colors">avocat01@yandex.ru</a>
                       </p>
                     </div>
                   </div>
@@ -547,7 +551,7 @@ export default function Index() {
         <div className="container mx-auto px-4 sm:px-6">
           <div className="flex flex-col items-center gap-2">
             <p className="text-center text-sm sm:text-base md:text-lg font-semibold">
-              Мушовец Алексей Геннадьевич
+              Майорова Анна Владимировна
             </p>
             <p className="text-center text-xs sm:text-sm text-muted-foreground">
               адвокат город Москва
