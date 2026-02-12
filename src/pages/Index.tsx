@@ -356,7 +356,7 @@ export default function Index() {
                   <div className="space-y-4 text-foreground leading-relaxed">
                     <p className="flex items-start gap-2">
                       <Icon name="Award" size={20} className="text-primary mt-1 flex-shrink-0" />
-                      <span><strong>Более 20 лет</strong> успешной адвокатской практики</span>
+                      <span><strong>Более 20 лет</strong> успешной практики</span>
                     </p>
                     <div className="mt-6 pt-6 border-t border-border space-y-3">
                       <p className="flex items-center gap-2">
