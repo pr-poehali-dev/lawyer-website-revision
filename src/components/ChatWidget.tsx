@@ -134,7 +134,7 @@ export default function ChatWidget() {
   return (
     <>
       {showBubble && !isOpen && (
-        <div className="fixed bottom-24 sm:bottom-28 right-3 sm:right-4 md:right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-500">
+        <div className="fixed bottom-44 sm:bottom-48 right-3 sm:right-4 md:right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-500">
           <div className="relative bg-card border border-border rounded-2xl rounded-br-sm shadow-xl px-4 py-3 max-w-[260px]">
             <button
               onClick={() => { setShowBubble(false); setIsDismissed(true); }}
@@ -151,7 +151,7 @@ export default function ChatWidget() {
       )}
 
       {isOpen && (
-        <div className="fixed bottom-3 sm:bottom-4 right-3 sm:right-4 md:right-6 z-[60] w-[calc(100%-24px)] sm:w-[360px] animate-in slide-in-from-bottom-4 fade-in duration-300">
+        <div className="fixed bottom-44 sm:bottom-48 right-3 sm:right-4 md:right-6 z-[60] w-[calc(100%-24px)] sm:w-[360px] animate-in slide-in-from-bottom-4 fade-in duration-300">
           <div className="bg-card border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col" style={{ maxHeight: 'calc(100vh - 100px)' }}>
             <div className="bg-primary px-4 py-3 flex items-center justify-between flex-shrink-0">
               <div className="flex items-center gap-2.5">
@@ -272,7 +272,7 @@ export default function ChatWidget() {
       )}
 
       {!isOpen && !showBubble && !isDismissed && (
-        <div className="fixed bottom-24 sm:bottom-28 right-3 sm:right-4 md:right-6 z-50">
+        <div className="fixed bottom-44 sm:bottom-48 right-3 sm:right-4 md:right-6 z-50">
           <button
             onClick={handleOpen}
             className="w-12 h-12 sm:w-14 sm:h-14 rounded-full bg-primary hover:bg-primary/90 shadow-lg hover:shadow-xl transition-all duration-300 flex items-center justify-center hover:scale-110"
