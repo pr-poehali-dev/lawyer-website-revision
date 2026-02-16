@@ -139,12 +139,14 @@
     -webkit-touch-callout: none;
   }
 
-  /* Разрешаем выделение только в полях ввода */
+  /* Разрешаем выделение в полях ввода и элементах с классом select-text */
   input,
-  textarea {
+  textarea,
+  .select-text {
     -webkit-user-select: text !important;
     -moz-user-select: text !important;
     -ms-user-select: text !important;
     user-select: text !important;
+    -webkit-touch-callout: default !important;
   }
 }
