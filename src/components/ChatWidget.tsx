@@ -14,12 +14,10 @@ type ChatStep = 'greeting' | 'ask_name' | 'ask_problem' | 'submitting' | 'submit
 
 export default function ChatWidget() {
   const [isOpen, setIsOpen] = useState(false);
-  const [isDismissed, setIsDismissed] = useState(false);
   const [step, setStep] = useState<ChatStep>('greeting');
   const [messages, setMessages] = useState<Message[]>([]);
   const [inputValue, setInputValue] = useState('');
   const [userName, setUserName] = useState('');
-  const [showBubble, setShowBubble] = useState(false);
   const messagesEndRef = useRef<HTMLDivElement>(null);
   const msgIdRef = useRef(0);
 
@@ -35,12 +33,12 @@ export default function ChatWidget() {
 
   useEffect(() => {
     const timer = setTimeout(() => {
-      if (!isDismissed) {
-        setShowBubble(true);
+      if (!isOpen) {
+        setIsOpen(true);
       }
-    }, 15000);
+    }, 7000);
     return () => clearTimeout(timer);
-  }, [isDismissed]);
+  }, []);
 
   useEffect(() => {
     if (isOpen && messages.length === 0) {
@@ -60,13 +58,10 @@ export default function ChatWidget() {
 
   const handleOpen = () => {
     setIsOpen(true);
-    setShowBubble(false);
   };
 
   const handleClose = () => {
     setIsOpen(false);
-    setIsDismissed(true);
-    setShowBubble(false);
   };
 
   const handleSend = async () => {
@@ -129,27 +124,8 @@ export default function ChatWidget() {
     }
   };
 
-  if (isDismissed && !isOpen) return null;
-
   return (
     <>
-      {showBubble && !isOpen && (
-        <div className="fixed bottom-44 sm:bottom-48 right-3 sm:right-4 md:right-6 z-50 animate-in slide-in-from-bottom-4 fade-in duration-500">
-          <div className="relative bg-card border border-border rounded-2xl rounded-br-sm shadow-xl px-4 py-3 max-w-[260px]">
-            <button
-              onClick={() => { setShowBubble(false); setIsDismissed(true); }}
-              className="absolute -top-2 -right-2 w-5 h-5 bg-muted hover:bg-muted-foreground/20 rounded-full flex items-center justify-center transition-colors"
-            >
-              <Icon name="X" size={12} className="text-muted-foreground" />
-            </button>
-            <button onClick={handleOpen} className="text-left">
-              <p className="text-sm text-foreground font-medium">Нужна юридическая помощь?</p>
-              <p className="text-xs text-muted-foreground mt-1">Напишите — ответим быстро</p>
-            </button>
-          </div>
-        </div>
-      )}
-
       {isOpen && (
         <div className="fixed bottom-44 sm:bottom-48 right-3 sm:right-4 md:right-6 z-[60] w-[calc(100%-24px)] sm:w-[360px] animate-in slide-in-from-bottom-4 fade-in duration-300">
           <div className="bg-card border border-border rounded-2xl shadow-2xl overflow-hidden flex flex-col" style={{ maxHeight: 'calc(100vh - 100px)' }}>
@@ -271,7 +247,7 @@ export default function ChatWidget() {
         </div>
       )}
 
-      {!isOpen && !showBubble && !isDismissed && (
+      {!isOpen && (
         <div className="fixed bottom-44 sm:bottom-48 right-3 sm:right-4 md:right-6 z-50">
           <button
             onClick={handleOpen}
