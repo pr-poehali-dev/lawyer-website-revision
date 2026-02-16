@@ -6,6 +6,7 @@ import { Textarea } from '@/components/ui/textarea';
 import { Label } from '@/components/ui/label';
 import { Checkbox } from '@/components/ui/checkbox';
 import Icon from '@/components/ui/icon';
+import ChatWidget from '@/components/ChatWidget';
 
 export default function Index() {
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -544,6 +545,8 @@ export default function Index() {
           </div>
         </div>
       </section>
+
+      <ChatWidget />
 
       <div className="fixed right-3 sm:right-4 md:right-6 bottom-6 sm:bottom-8 z-50 flex flex-col gap-3">
         <a
