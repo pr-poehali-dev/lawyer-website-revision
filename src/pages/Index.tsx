@@ -167,7 +167,8 @@ export default function Index() {
                     <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">Телефон</span>
                     <a 
                       href="tel:+79060194020" 
-                      className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground hover:text-primary transition-colors"
+                      className="text-sm sm:text-base md:text-lg lg:text-xl font-bold text-foreground hover:text-primary transition-colors select-text pointer-events-auto cursor-pointer"
+                      style={{ WebkitUserSelect: 'text', userSelect: 'text' }}
                     >
                       +7 906 019-40-20
                     </a>
@@ -180,7 +181,8 @@ export default function Index() {
                     <span className="text-[10px] sm:text-xs md:text-sm text-muted-foreground">Email</span>
                     <a 
                       href="mailto:advokatmushovets@mail.ru" 
-                      className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-foreground hover:text-primary transition-colors break-all"
+                      className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl font-bold text-foreground hover:text-primary transition-colors break-all select-text pointer-events-auto cursor-pointer"
+                      style={{ WebkitUserSelect: 'text', userSelect: 'text' }}
                     >
                       advokatmushovets@mail.ru
                     </a>
@@ -361,11 +363,11 @@ export default function Index() {
                     <div className="mt-6 pt-6 border-t border-border space-y-3">
                       <p className="flex items-center gap-2">
                         <Icon name="Phone" size={20} className="text-primary flex-shrink-0" />
-                        <a href="tel:+79060194020" className="hover:text-primary transition-colors">+7 906 019-40-20</a>
+                        <a href="tel:+79060194020" className="hover:text-primary transition-colors select-text pointer-events-auto cursor-pointer" style={{ WebkitUserSelect: 'text', userSelect: 'text' }}>+7 906 019-40-20</a>
                       </p>
                       <p className="flex items-center gap-2">
                         <Icon name="Mail" size={20} className="text-primary flex-shrink-0" />
-                        <a href="mailto:advokatmushovets@mail.ru" className="hover:text-primary transition-colors">advokatmushovets@mail.ru</a>
+                        <a href="mailto:advokatmushovets@mail.ru" className="hover:text-primary transition-colors select-text pointer-events-auto cursor-pointer" style={{ WebkitUserSelect: 'text', userSelect: 'text' }}>advokatmushovets@mail.ru</a>
                       </p>
                     </div>
                   </div>
@@ -421,11 +423,11 @@ export default function Index() {
                   <div className="mt-8 pt-8 border-t border-border">
                     <p className="text-sm text-muted-foreground mb-3">Или свяжитесь со мной напрямую:</p>
                     <div className="flex flex-col sm:flex-row gap-4 justify-center">
-                      <a href="tel:+79060194020" className="text-primary hover:underline font-semibold">
+                      <a href="tel:+79060194020" className="text-primary hover:underline font-semibold select-text pointer-events-auto cursor-pointer" style={{ WebkitUserSelect: 'text', userSelect: 'text' }}>
                         +7 906 019-40-20
                       </a>
                       <span className="hidden sm:inline text-muted-foreground">|</span>
-                      <a href="mailto:advokatmushovets@mail.ru" className="text-primary hover:underline font-semibold">
+                      <a href="mailto:advokatmushovets@mail.ru" className="text-primary hover:underline font-semibold select-text pointer-events-auto cursor-pointer" style={{ WebkitUserSelect: 'text', userSelect: 'text' }}>
                         advokatmushovets@mail.ru
                       </a>
                     </div>
